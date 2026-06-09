@@ -1,19 +1,66 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <!-- PWA -->
+  <!-- ═══ ESSENTIAL META TAGS ═══ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="email=no">
+
+  <!-- ═══ SEO META TAGS ═══ -->
+  <title>ITI Wale Student – 134 Trades Free Mock Test</title>
+  <meta name="description" content="India's #1 ITI Mock Test Platform - 134 ITI Trades, Module-wise Tests, Live Timer, AITT Pattern, Free Practice">
+  <meta name="keywords" content="ITI mock test, ITI exam preparation, free ITI practice, 134 trades, AITT pattern">
+  <meta name="author" content="ITI Wale Student">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Hindi, English">
+
+  <!-- ═══ SOCIAL MEDIA & OPEN GRAPH ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ITI Wale Student – Free ITI Mock Tests">
+  <meta property="og:description" content="134 ITI Trades • Module-wise Tests • Live Timer • AITT Pattern • Instant Results">
+  <meta property="og:image" content="icon-192.png">
+  <meta property="og:url" content="https://itiwale.in">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ITI Wale Student – Free ITI Mock Tests">
+  <meta name="twitter:description" content="134 ITI Trades • Module-wise Tests • Free Practice with Explanations">
+
+  <!-- ═══ PWA & APP META TAGS ═══ -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#F97316">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="ITIWaleStudent">
-  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="apple-mobile-web-app-title" content="ITI Wale">
+  <meta name="application-name" content="ITI Wale Student">
+  <meta name="msapplication-TileColor" content="#F97316">
+  <meta name="msapplication-TileImage" content="icon-192.png">
+  <meta name="msapplication-config" content="browserconfig.xml">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ITI Wale Student – 134 Trades Free Mock Test</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- ═══ ICONS ═══ -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icon-192.png" sizes="180x180">
+  <link rel="shortcut icon" href="icon-192.png">
+
+  <!-- ═══ SECURITY HEADERS ═══ -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- ═══ PERFORMANCE & MISC ═══ -->
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0F172A">
+  <meta name="background-color" content="#0F172A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --blue:#1E3A8A;--blue-mid:#2563EB;--blue-light:#DBEAFE;
@@ -51,8 +98,8 @@ button{cursor:pointer;font-family:'Poppins',sans-serif;border:none}
   padding:9px 22px;border-radius:9px;font-size:.84rem;font-weight:700;
   box-shadow:0 4px 16px rgba(249,115,22,.4);transition:all .2s}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(249,115,22,.6)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:950;width:44px;height:44px;justify-content:center;align-items:center;flex-shrink:0}
+.hamburger span{width:24px;height:2.5px;background:#fff;border-radius:2px;transition:all .3s}
 
 /* ══════════════ PAGES ══════════════ */
 .page{display:none;min-height:100vh}
@@ -429,7 +476,38 @@ footer p{font-size:.8rem;color:#475569;margin-top:5px}
 
 /* ══════════════ RESPONSIVE ══════════════ */
 @media(max-width:768px){
-  .nav-links{display:none}.hamburger{display:flex}
+  /* Navbar mobile fixes */
+  .nav-links{display:none !important}
+  .guest-btns{display:none !important}
+  .nav-uname{display:none !important}
+  .btn-nav-logout{display:none !important}
+  /* Hamburger MUST show */
+  .hamburger{
+    display:flex !important;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    padding:8px;
+    width:42px;
+    height:42px;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+    z-index:950
+  }
+  .hamburger span{
+    width:22px;
+    height:2.5px;
+    background:#fff;
+    border-radius:2px;
+    display:block
+  }
+  /* Test Karo button — shorter on mobile */
+  .nav-cta{padding:8px 12px !important;font-size:.78rem !important}
+  .nav-cta-txt{display:none}
+  /* nav-av show on mobile when logged in */
+  .nav-av{width:30px !important;height:30px !important;font-size:.8rem !important}
+  /* Other page fixes */
   .test-layout{grid-template-columns:1fr}
   .hero-stats{grid-template-columns:repeat(2,1fr)}
   .result-stats-row{grid-template-columns:repeat(2,1fr)}
@@ -437,12 +515,26 @@ footer p{font-size:.8rem;color:#475569;margin-top:5px}
   .lb-tm{display:none}
   .trades-grid-main{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
 }
-@media(max-width:480px){.trades-grid-main{grid-template-columns:1fr 1fr}}
+/* Extra small phones */
+@media(max-width:360px){
+  .logo-txt{font-size:.85rem}
+  .nav-cta{padding:7px 10px !important;font-size:.72rem !important}
+}
+@media(max-width:480px){
+  .navbar{padding:0 8px !important}
+  .trades-grid-main{grid-template-columns:1fr 1fr}
+  .hamburger{width:40px;height:40px;padding:6px}
+  .hamburger span{width:20px}
+  .nav-cta{padding:5px 8px !important;font-size:.68rem !important}
+}
 
-.nav-btn-register{display:none}/* Register sirf hamburger menu mein */
-  .nav-cta{padding:6px 9px;font-size:.72rem}
-
-
+/* ─── MOBILE NAVBAR FIXES ─── */
+@media(max-width:768px){
+  .guest-btns{display:none !important}
+  .nav-uname{display:none !important}
+  .nav-cta{padding:6px 9px !important;font-size:.72rem !important}
+  .hamburger{display:flex !important}
+}
 
 /* ═══════════════════════════════════════════
    NAVBAR RIGHT GROUP
@@ -489,6 +581,7 @@ footer p{font-size:.8rem;color:#475569;margin-top:5px}
 
 /* ─── MOBILE: max-width 768px ─── */
 @media(max-width:768px){
+  .navbar{padding:0 12px !important}
   /* Desktop nav links hide karo */
   .nav-links{display:none !important}
 
@@ -499,13 +592,15 @@ footer p{font-size:.8rem;color:#475569;margin-top:5px}
 
   /* Test button chhota karo */
   .nav-cta{
-    padding:7px 11px !important;
-    font-size:.76rem !important;
-    white-space:nowrap
+    padding:6px 9px !important;
+    font-size:.72rem !important;
+    white-space:nowrap;
+    flex-shrink:0
   }
 
   /* Hamburger show */
   .hamburger{display:flex !important}
+  .nav-right-group{gap:4px}
 }
 
 
@@ -660,7 +755,7 @@ footer p{font-size:.8rem;color:#475569;margin-top:5px}
     <span class="logo-txt">ITIWALESTUDENT</span>
   </div>
 
-  <!-- Desktop nav links (hidden on mobile) -->
+  <!-- Desktop nav links -->
   <div class="nav-links">
     <a onclick="showPage('home')" id="nl-home" class="active">Home</a>
     <a onclick="showPage('trades-pg')" id="nl-trades">Trades</a>
@@ -668,27 +763,23 @@ footer p{font-size:.8rem;color:#475569;margin-top:5px}
     <a onclick="showPage('prac-pg')" id="nl-prac">Practice</a>
   </div>
 
-  <!-- Right side: auth + cta -->
+  <!-- Right side -->
   <div class="nav-right-group">
-
-    <!-- Logged OUT: Login + Register (desktop only) -->
+    <!-- Guest: Login + Register — DESKTOP ONLY -->
     <div id="guestBtns" class="guest-btns">
-      <a href="login.html" class="btn-nav-login">Login</a>
-      <a href="login.html" class="btn-nav-register">Register</a>
+      <a onclick="showPage('login-pg')" class="btn-nav-login">Login</a>
+      <a onclick="showPage('login-pg');switchAuthTab('register')" class="btn-nav-register">Register</a>
     </div>
-
-    <!-- Logged IN: Avatar + name -->
+    <!-- Logged IN -->
     <div id="userBtns" class="user-btns">
-      <div id="navAv" onclick="window.location.href='dashboard.html'" class="nav-av">U</div>
-      <span id="navUN" onclick="window.location.href='dashboard.html'" class="nav-uname"></span>
+      <div id="navAv" onclick="showPage('dash-pg')" class="nav-av">U</div>
+      <span id="navUN" onclick="showPage('dash-pg')" class="nav-uname"></span>
       <button onclick="navLogout()" class="btn-nav-logout">Logout</button>
     </div>
-
-    <!-- Test button (always visible) -->
-    <button class="nav-cta" onclick="openWizard(null)">🚀 Test Karo</button>
-
-    <!-- Hamburger (mobile only) -->
-    <div class="hamburger" onclick="toggleMobileMenu()">
+    <!-- Test Karo — always visible -->
+    <button class="nav-cta" onclick="openWizard(null)">🚀 <span class="nav-cta-txt">Test Karo</span></button>
+    <!-- Hamburger — MOBILE ONLY -->
+    <div class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()">
       <span></span><span></span><span></span>
     </div>
   </div>
@@ -3950,19 +4041,53 @@ document.addEventListener('DOMContentLoaded',function(){
 
 
   <script>
+    // ── PWA: Inline Service Worker (no external sw.js needed) ──
     if('serviceWorker' in navigator){
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then(() => console.log('App ready for offline use!'))
-          .catch(e => console.log('SW Error:', e));
+        try {
+          // Inline SW as blob - works without separate sw.js file
+          const swCode = `
+            const CACHE='itiwale-v2';
+            const FILES=['/'];
+            self.addEventListener('install',e=>{
+              e.waitUntil(caches.open(CACHE).then(c=>{
+                return Promise.allSettled(FILES.map(f=>c.add(f)));
+              }));
+              self.skipWaiting();
+            });
+            self.addEventListener('activate',e=>{
+              e.waitUntil(caches.keys().then(keys=>
+                Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))
+              ));
+              self.clients.claim();
+            });
+            self.addEventListener('fetch',e=>{
+              if(e.request.method!=='GET')return;
+              e.respondWith(
+                fetch(e.request).then(r=>{
+                  if(r&&r.status===200){
+                    const clone=r.clone();
+                    caches.open(CACHE).then(c=>c.put(e.request,clone));
+                  }
+                  return r;
+                }).catch(()=>caches.match(e.request))
+              );
+            });
+          `;
+          const blob = new Blob([swCode], {type:'application/javascript'});
+          const swUrl = URL.createObjectURL(blob);
+          navigator.serviceWorker.register(swUrl, {scope:'/'})
+            .then(()=>console.log('✅ PWA Ready!'))
+            .catch(()=>{}); // Silent fail - ok in preview
+        } catch(e) {}
       });
     }
-    // Install prompt
+
+    // ── Install App Banner ──
     let deferredPrompt;
     window.addEventListener('beforeinstallprompt', e => {
       e.preventDefault();
       deferredPrompt = e;
-      // Show install banner after 3 seconds
       setTimeout(() => {
         const banner = document.getElementById('installBanner');
         if(banner) banner.style.display = 'flex';
